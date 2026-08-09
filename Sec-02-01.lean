@@ -91,6 +91,6 @@ theorem compile_correct (e : exp) :
           rfl
           -- Leanではこう書けば済む
           -- simp [compile, List.append_assoc, ih1, ih2, prog_denote, instr_denote, exp_denote]
-  rw [← List.append_nil (compile e)]
+  rw [← List.append_nil (compile e)] -- List.append_nilがxs ++ [] = xsなので
   rw [h]
   rfl
